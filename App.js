@@ -11,10 +11,18 @@ const Drawer = createDrawerNavigator()
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator>
-      <Drawer.Screen name='WeatherScreen' component={WeatherScreen}/>
-      <Drawer.Screen name='GameRulesScreen' component={GameRulesScreen}/>
+    <NavigationContainer >
+      <Drawer.Navigator screenOptions={{
+        drawerStyle: {color: 'white'},
+        drawerActiveBackgroundColor: '#6c767e',
+        drawerInactiveBackgroundColor: '#cfd6dc'
+      }}>
+      <Drawer.Screen name='WeatherScreen' component={WeatherScreen} options={{
+        drawerLabel: 'Home'
+      }}/>
+      <Drawer.Screen name='GameRulesScreen' component={GameRulesScreen} options={{
+        drawerLabel: 'Game Rules'
+      }}/>
       </Drawer.Navigator>
     </NavigationContainer>
 
@@ -24,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#2F495D',
     alignItems: 'center',
     justifyContent: 'center',
   },
