@@ -10,31 +10,41 @@ import WeatherScreen from './screens/WeatherScreen';
 const Drawer = createDrawerNavigator()
 
 export default function App() {
+  
   return (
-    <NavigationContainer >
-      <Drawer.Navigator screenOptions={{
-        drawerStyle: {color: 'white'},
-        drawerActiveBackgroundColor: '#6c767e',
-        drawerInactiveBackgroundColor: '#cfd6dc'
-      }}>
-      <Drawer.Screen name='WeatherScreen' component={WeatherScreen} options={{
-        drawerLabel: 'Home',
-        title: 'Home'
-      }}/>
-      <Drawer.Screen name='GameRulesScreen' component={GameRulesScreen} options={{
-        drawerLabel: 'Game Rules'
-      }}/>
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar/>
+      <NavigationContainer>
+        <Drawer.Navigator screenOptions={{
+          // transparent header
+          headerTransparent: true,
+          drawerStyle: { color: 'white' },
+          drawerActiveBackgroundColor: '#6c767e',
+          drawerInactiveBackgroundColor: '#cfd6dc'
+        }}>
+          <Drawer.Screen
+            name='WeatherScreen'
+            component={WeatherScreen}
+            options={{
+              drawerLabel: 'Home',
+              title: 'Home',
+              // headerTransparent: true,
 
+            }} />
+          {/* <Drawer.Screen name='GameRulesScreen' component={GameRulesScreen} options={{
+        drawerLabel: 'Game Rules'
+      }}/> */}
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2F495D',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: '#2F495D',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
 });

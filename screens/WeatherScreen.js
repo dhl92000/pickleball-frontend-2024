@@ -1,22 +1,15 @@
 import { useEffect, useState, createContext } from "react"
 import { Alert, StyleSheet, Text, View } from "react-native"
-
 import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from "expo-location"
-
 import { fetchWeather } from "../utils/http"
 
 import Avatar from "../components/Avatar"
+import { Colours } from "../UI/Colours"
 import LocationCard from "../components/LocationCard"
 import WeatherCard from "../components/WeatherCard"
 
-// use location or enter a city name - 2 custom buttons
-
 const WeatherScreen = () => {
-    // data fetched from weather API, gives weather data
     const [weatherData, setWeatherData] = useState()
-
-    // I want to get user location, pass in longitude/lat coords to fetch function, and return a result
-    // server error, try again later OR ideal conditions, OK condition, play another day
 
     // test API 
     // useEffect(()=> {
@@ -50,28 +43,22 @@ const WeatherScreen = () => {
         }
 
         const location = await getCurrentPositionAsync()
-
         const weatherDetails = await fetchWeather(location.coords.latitude, location.coords.longitude)
-        console.log(weatherDetails)
 
         setWeatherData((prev) => ({ 
-            wind_speed: weatherDetails.wind_speed 
+            wind_speed: weatherDetails.wind_speed,
+            temp: weatherDetails.temp,
+            feels_like: weatherDetails.feels_like,
+            humidity: weatherDetails.humidity,
+            cloud_pct: weatherDetails.cloud_pct 
         }))
     }
 
-
     return (
         <View style={styles.container}>
-            <Text>
-                Weather Screen Title
-            </Text>
             <Avatar weatherData={weatherData}/>
-
             <LocationCard getLocationHandler={getLocationHandler} />
-
-            {/* 2 location buttons that change to input or loading widget  */}
-
-            <WeatherCard />
+            <WeatherCard weatherData={weatherData}/>
         </View>
     )
 }
@@ -84,5 +71,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: Colours.bgLight
     },
 });

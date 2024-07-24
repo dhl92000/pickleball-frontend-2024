@@ -22,6 +22,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/figtree/Figtree_500Medium.ttf",
+            "node_modules/@expo-google-fonts/racing-sans-one/RacingSansOne_400Regular.ttf"
+          ]
+        }
+      ]
+    ]
   }
 }

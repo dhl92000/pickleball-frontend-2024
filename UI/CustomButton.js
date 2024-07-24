@@ -1,9 +1,10 @@
 import { StyleSheet, Text, Pressable, View } from "react-native"
+import { Colours } from "./Colours";
 
 const CustomButton = ({ title, onPress }) => {
     return (
         <Pressable
-            style={styles.container}
+            style={({pressed}) => [styles.container, pressed && styles.pressed]}
             onPress={onPress}
         >
             <Text style={styles.text}>
@@ -18,12 +19,19 @@ export default CustomButton
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        borderWidth: 4,
-        borderColor: '#2f495d',
+        // borderWidth: 1,
+        // borderColor: '#2f495d',
+        backgroundColor: '#467AA6',
         borderRadius: 16,
         padding: 16,
+        marginVertical: 10
     },
     text: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: Colours.bgLight2
+    },
+    pressed: {
+        opacity: 0.7
     }
 });
