@@ -1,17 +1,21 @@
 import { StyleSheet, Text, View} from 'react-native'
 
-const Avatar = () => {
+const Avatar = ({weatherData}) => {
+
+    let weatherText = <Text>Is it ok to play?</Text>
+
+    if (weatherData) {
+        weatherText = <Text>It's windy</Text>
+    }
+
     return (
         <View style={styles.container}>
-        <Text>
-            PIckleball Image
-        </Text>
+            <Text>{weatherText}</Text>
         </View>
     )
 }
 
 export default Avatar
-
 
 const styles = StyleSheet.create({
     container: {

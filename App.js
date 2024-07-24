@@ -18,7 +18,8 @@ export default function App() {
         drawerInactiveBackgroundColor: '#cfd6dc'
       }}>
       <Drawer.Screen name='WeatherScreen' component={WeatherScreen} options={{
-        drawerLabel: 'Home'
+        drawerLabel: 'Home',
+        title: 'Home'
       }}/>
       <Drawer.Screen name='GameRulesScreen' component={GameRulesScreen} options={{
         drawerLabel: 'Game Rules'
