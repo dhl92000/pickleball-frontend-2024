@@ -9,8 +9,8 @@ const LocationCard = ({ getLocationHandler }) => {
                 <Text style={styles.text}>Check Wind Conditions</Text>
             </View>
             <View style={styles.container}>
-                <CustomButton title='Get Location' onPress={getLocationHandler} />
-                {/* <CustomButton title='Enter City' /> */}
+                <CustomButton title='GET LOCATION' onPress={getLocationHandler} />
+                {/* <CustomButton title='ENTER CITY' /> */}
             </View>
         </View>
     )
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
         color: 'blue'
     },
     text:{
-        color: '#799DC5'
+        color: Colours.deepBlue
     }
 });

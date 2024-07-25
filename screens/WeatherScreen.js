@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext } from "react"
-import { Alert, StyleSheet, Text, View } from "react-native"
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native"
 import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from "expo-location"
 import { fetchWeather } from "../utils/http"
 
