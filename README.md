@@ -25,3 +25,7 @@ Some features I plan on implementing are:
 - Save favourite locations to fetch weather data on app load
 - Searchable pickleball game rules, so users can check rules during games
 - Dark mode
+  
+## Wireframes and App In-Progress
+![Screenshot 2024-07-25 at 3 30 51 PM](https://github.com/user-attachments/assets/5bd86f46-4562-43e8-a99a-703ca01eb0d8)
+![Screenshot 2024-07-25 at 3 33 43 PM](https://github.com/user-attachments/assets/4bdcfb6b-0f2e-4848-a1b0-1804152f56b1)
