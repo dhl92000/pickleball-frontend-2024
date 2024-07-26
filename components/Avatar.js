@@ -1,13 +1,12 @@
 import { Platform, StyleSheet, Text, View } from 'react-native'
 
-
 const Avatar = ({ weatherData }) => {
     // under 12mph = perfect
     // 12-15mph = a bit of a challenge
     // 15+ = forget about it 
 
     // button to convert mph, km/h 
-    let windMessage = 'Pickleball?'
+    let windMessage = 'Pickleball Forecast'
     let windSpd = 'Wind speed: Loading'
     let avatarColour = {
         width: '50%',
@@ -32,7 +31,7 @@ const Avatar = ({ weatherData }) => {
 
     return (
         <View style={styles.container}>
-            <Text>{windMessage}</Text>
+            <Text style={styles.title}>{windMessage}</Text>
             <View style={avatarColour}></View>
             <Text style={styles.windText}>{windSpd}</Text>
         </View>
@@ -52,6 +51,9 @@ const styles = StyleSheet.create({
         margin: 6,
         borderRadius: 18,
         backgroundColor: 'white',
+    },
+    title:{
+        fontSize: 24
     },
     windText:{
         fontFamily: Platform.select({android: 'Figtree_500Medium', ios: 'Figtree'}),

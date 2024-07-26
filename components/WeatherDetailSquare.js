@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native"
+import { Colours } from "../UI/Colours"
 
 const WeatherDetailSquare = ({ heading, detail }) => {
     return (
         <View style={styles.weatherDetailContainer}>
             <View>
-                <Text>{heading}</Text>
+                <Text style={styles.weatherDetailTitle}>{heading}</Text>
             </View>
             <View>
                 <Text style={styles.weatherDetail}>{detail}</Text>
@@ -24,7 +25,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 12
     },
+    weatherDetailTitle: {
+        color: Colours.lightBlue
+    },
     weatherDetail: {
-        fontSize: 32
+        fontSize: 32,
+        color: Colours.deepBlue
     }
 })
