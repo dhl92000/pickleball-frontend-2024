@@ -1,4 +1,5 @@
 import { Platform, StyleSheet, Text, View } from 'react-native'
+import { Colours } from '../UI/Colours'
 
 const Avatar = ({ weatherData }) => {
     // under 12mph = perfect
@@ -7,11 +8,11 @@ const Avatar = ({ weatherData }) => {
 
     // button to convert mph, km/h 
     let windMessage = 'Pickleball Forecast'
-    let windSpd = 'Wind speed: Loading'
+    let windSpd = ''
     let avatarColour = {
-        width: '50%',
-        height: '50%',
-        borderRadius: '100%',
+        width: 150,
+        height: 150,
+        borderRadius: 150/2,
         backgroundColor: 'gray'
     }
 
@@ -20,7 +21,7 @@ const Avatar = ({ weatherData }) => {
             windMessage = 'Perfect day for pickleball!'
             avatarColour.backgroundColor = 'green'
         } else if (weatherData.wind_speed > 11 && weatherData.wind_speed < 15) {
-            windMessage  = `There's a bit of wind!`
+            windMessage  = `A bit windy today!`
             avatarColour.backgroundColor = 'blue'
         } else {
             windMessage = 'Too much wind...'
@@ -31,8 +32,13 @@ const Avatar = ({ weatherData }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{windMessage}</Text>
+            {/* banner message */}
+            <Text style={styles.title}>{windMessage.toUpperCase()}</Text>
+
+            {/* circle */}
             <View style={avatarColour}></View>
+
+            {/* wind speed text */}
             <Text style={styles.windText}>{windSpd}</Text>
         </View>
     )
@@ -53,16 +59,22 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     title:{
-        fontSize: 24
+        fontSize: 32,
+        fontFamily: 'RacingSansOne-Regular',
+        textAlign: 'center',
+        color: Colours.deepBlue,
+        letterSpacing: 0.5
     },
     windText:{
-        fontFamily: Platform.select({android: 'Figtree_500Medium', ios: 'Figtree'}),
-        color: '#467AA6'
+        fontSize: 16,
+        fontFamily: 'Figtree',
+        color: '#467AA6',
+        letterSpacing: 0.5,
     },
-    avatar: {
-        width: '50%',
-        height: '50%',
-        borderRadius: '100%',
-        backgroundColor: 'gray'
-    }
+    // avatar: {
+    //     width: '50%',
+    //     height: '50%',
+    //     borderRadius: '100%',
+    //     backgroundColor: 'gray'
+    // }
 });

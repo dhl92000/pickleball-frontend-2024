@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text } from "react-native"
 import WeatherDetailSquare from "./WeatherDetailSquare"
+import { Colours } from "../UI/Colours"
 
 const WeatherCard = ({ weatherData }) => {
 
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
     },
     loadingScreenText: {
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: Colours.deepBlue
     }
 })

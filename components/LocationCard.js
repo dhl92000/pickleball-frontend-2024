@@ -6,7 +6,7 @@ const LocationCard = ({ getLocationHandler }) => {
     return (
         <View>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Check Wind Conditions</Text>
+                {/* <Text style={styles.text}>Check Wind Conditions</Text> */}
             </View>
             <View style={styles.container}>
                 <CustomButton title='GET LOCATION' onPress={getLocationHandler} />
